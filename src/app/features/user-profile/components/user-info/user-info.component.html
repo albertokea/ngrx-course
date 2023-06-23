@@ -1,0 +1,40 @@
+<div *ngIf="user" class="flex flex-col bg-blue-100 rounded-lg shadow-xl p-9">
+  <div>
+    <div class="p-2 photo-wrapper">
+      <img
+        class="w-32 h-32 mx-auto rounded-full"
+        [src]="user.image"
+        alt="John Doe"
+      />
+    </div>
+    <div class="pt-5 text-xl">
+      <h3 class="text-2xl font-medium leading-8 text-center text-gray-900">
+        {{ user.name }}
+      </h3>
+      <table class="my-3 text-xl">
+        <tbody>
+          <tr>
+            <td class="px-2 py-2 font-semibold text-gray-500">Email</td>
+            <td class="px-2 py-2">{{ user.email }}</td>
+          </tr>
+          <tr>
+            <td class="px-2 py-2 font-semibold text-gray-500">Nombre</td>
+            <td class="px-2 py-2">{{ user.name }}</td>
+          </tr>
+          <tr>
+            <td class="px-2 py-2 font-semibold text-gray-500">
+              Primer apellido
+            </td>
+            <td class="px-2 py-2">{{ user.surname1 }}</td>
+          </tr>
+          <tr>
+            <td class="px-2 py-2 font-semibold text-gray-500">
+              Segundo apellido
+            </td>
+            <td class="px-2 py-2">{{ user.surname2 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

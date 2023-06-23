@@ -1,0 +1,28 @@
+<div *ngIf="player" class="flex flex-col bg-blue-100 p-9">
+  <div>
+    <div class="flex flex-row">
+        <p class="text-2xl font-bold">{{ player.playerName }}</p>
+        <div class="flex-grow"></div>
+        <img [src]="player.image" class="w-36"/>
+    </div>
+  
+    <div class="pt-5 text-xl">
+      <div class="flex flex-row pt-3">
+        <p class="pr-3 font-bold">Nombre:</p>
+        <p>{{ player.name }}</p>
+      </div>
+      <div class="flex flex-row pt-3">
+        <p class="pr-3 font-bold">Fecha de nacimiento:</p>
+        <p>{{ player.birthDate }}</p>
+      </div>
+      <div class="flex flex-row pt-3">
+        <p class="pr-3 font-bold">Goles en propia puerta:</p>
+        <p>{{ player.ownGoals }}</p>
+      </div>
+      <div class="flex flex-row pt-3">
+        <p class="pr-3 font-bold">Partidos perdidos:</p>
+        <p>{{ player.lostMatches }}</p>
+      </div>
+    </div>
+  </div>
+</div>

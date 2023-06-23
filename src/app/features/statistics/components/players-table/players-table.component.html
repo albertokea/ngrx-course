@@ -1,0 +1,27 @@
+<table class="text-center border border-collapse border-slate-400">
+  <thead>
+    <tr class="h-8 bg-blue-100">
+      <th class="w-6 border border-slate-300">#</th>
+      <th class="w-32 border border-slate-300">Nombre</th>
+      <th class="border w-60 border-slate-300">Fecha de nacimiento</th>
+      <th class="w-32 border border-slate-300">{{ statisticName }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let player of data; let i = index">
+      <tr class="h-8 cursor-pointer hover:bg-slate-300" (click)="playerSelected(player)">
+        <td class="border border-slate-300">{{ i + 1}}</td>
+        <td class="border border-slate-300">{{ player.playerName }}</td>
+        <td class="border border-slate-300">{{ player.birthDate }}</td>
+        <ng-container
+          *ngIf="tableType === statisticsEnum.LOST_MATCHES; else ownGoals"
+        >
+          <td class="border border-slate-300">{{ player.lostMatches }}</td>
+        </ng-container>
+        <ng-template #ownGoals>
+          <td class="border border-slate-300">{{ player.ownGoals }}</td>
+        </ng-template>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

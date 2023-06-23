@@ -1,0 +1,30 @@
+<div class="p-6 bg-blue-300">
+  <form [formGroup]="form">
+    <div class="flex flex-col pt-8 w-60">
+      <label class="pb-2 font-bold">Nombre Jugador</label>
+      <input class="w-full p-2 h-9" formControlName="playerName" type="text" />
+    </div>
+    <div class="flex flex-col pt-8 w-60">
+      <label class="pb-2 font-bold">Nombre real</label>
+      <input class="w-full p-2 h-9" formControlName="name" type="text" />
+    </div>
+    <div class="flex flex-col pt-8 w-60">
+      <label class="pb-2 font-bold">Fecha de nacimiento</label>
+      <input class="w-full p-2 h-9" formControlName="birthDate" type="text" />
+    </div>
+    <div class="flex flex-col pt-8 w-60">
+      <label class="pb-2 font-bold">Partidos perdidos</label>
+      <input class="w-full p-2 h-9" formControlName="lostMatches" type="number" />
+    </div>
+  </form>
+
+  <div class="py-5">
+    <button
+      (click)="submitPlayer()"
+      [disabled]="!form.valid"
+      class="h-12 text-xl font-bold text-white bg-red-600 w-60 active:bg-slate-700 hover:bg-red-800 disabled:bg-gray-500"
+    >
+      Añadir
+    </button>
+  </div>
+</div>

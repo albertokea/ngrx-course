@@ -1,0 +1,31 @@
+<section>
+  <div class="pt-3 pl-3">
+    <a [routerLink]="'/home'" class="font-bold text-blue-600">
+      Volver al menú
+    </a>
+  </div>
+  <div
+    class="flex flex-col items-center justify-center w-screen md:flex-row md:items-start"
+    *ngIf="players$ | async as players"
+  >
+    <div class="flex flex-col items-center w-3/5">
+      <h1 class="p-6 text-3xl font-bold">
+        Jugadores con mas partidos perdidos
+      </h1>
+
+      <app-players-table
+        [data]="players"
+        [statisticName]="'Partidos perdidos'"
+        [tableType]="statisticsEnum.LOST_MATCHES"
+      ></app-players-table>
+    </div>
+    <div class="flex flex-col items-center w-2/5">
+      <h1 class="p-6 text-3xl font-bold">Añadir jugador</h1>
+      <div class="p-4">
+        <app-lost-matches-form
+          (player)="addPlayer($event)"
+        ></app-lost-matches-form>
+      </div>
+    </div>
+  </div>
+</section>
